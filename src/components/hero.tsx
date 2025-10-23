@@ -23,22 +23,22 @@ export default function Hero() {
   return (
     <section
       id="about"
-      className="w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-background to-muted/40 px-4 sm:px-8 lg:px-16 pt-16 md:pt-24"
+      className="w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-background to-muted/40 px-6 sm:px-10 lg:px-20 pt-16 md:pt-24"
     >
-      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center mb-[250px]">
         {/* Left Text Section */}
-        <div className="space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
-          <div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Hi! I'm{" "}
-              <span className="text-primary">James Paul Carballo</span>
+        <div className="flex flex-col items-center text-center md:items-start md:text-left space-y-6">
+          <div className="w-full text-center md:text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight flex flex-wrap justify-center md:justify-start gap-2">
+              <span>Hi! I'm</span>
+              <span className="text-primary whitespace-nowrap">James Paul Carballo</span>
             </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mt-2 text-muted-foreground">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mt-3 text-muted-foreground">
               Full Stack Developer
             </h2>
           </div>
 
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-md sm:max-w-xl">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-md sm:max-w-xl text-center">
             I'm a developer focusing on building scalable web and mobile applications using modern technologies.
             I study at Mapua Malayan Colleges Mindanao, and I’m passionate about creating efficient, user-friendly solutions
             that make an impact. I primarily work with React, Django, PostgreSQL, and Tailwind CSS, and I’m always eager to learn
@@ -84,12 +84,12 @@ export default function Hero() {
         </div>
 
         {/* Right Avatar Section */}
-        <div className="flex justify-center md:justify-end mt-8 md:mt-0">
-          <div className="relative w-[220px] sm:w-[280px] md:w-[380px] aspect-square bg-gradient-to-br from-accent/30 to-primary/30 rounded-2xl flex items-center justify-center shadow-lg">
+        <div className="flex justify-center md:justify-end">
+          <div className="relative w-[230px] sm:w-[280px] md:w-[380px] aspect-square bg-gradient-to-br from-accent/30 to-primary/30 rounded-2xl flex items-center justify-center shadow-lg">
             <img
               src={Avatar}
               alt="Avatar"
-              className="w-[180px] sm:w-[240px] md:w-[320px] object-contain drop-shadow-xl"
+              className="w-[280px] sm:w-[240px] md:w-[320px] object-contain drop-shadow-xl"
             />
           </div>
         </div>

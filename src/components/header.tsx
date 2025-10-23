@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
+import ProfilePic from "../assets/1x1Pic.jpg"
+
 interface HeaderProps {
   activeSection: string
   setActiveSection: (section: string) => void
@@ -31,7 +33,10 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border shadow-sm w-full">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent select-none">
+        <div className="text-2xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent select-none flex flex-row justify-center items-center gap-2">
+          <div>
+            <img src={ProfilePic} alt="Profile Picture" className="w-12 h-12 rounded-full" />
+          </div>
           Portfolio
         </div>
 
