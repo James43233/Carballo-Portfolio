@@ -1,6 +1,6 @@
 "use client"
 
-import Avatar from "../assets/Bitmoji.png"
+import Avatar from "../assets/MeinPng.png"
 
 const techStack = [
   { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -89,7 +89,7 @@ export default function Hero() {
             <img
               src={Avatar}
               alt="Avatar"
-              className="w-[280px] sm:w-[240px] md:w-[320px] object-contain drop-shadow-xl"
+              className="w-[280px] sm:w-[240px] md:w-[320px] object-contain drop-shadow-xl mb-[60px]"
             />
           </div>
         </div>
