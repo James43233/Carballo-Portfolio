@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
-import ProfilePic from "../assets/1x1Pic.jpg"
+import ProfilePic from "../assets/MeinPng.webp"
 
 interface HeaderProps {
   activeSection: string

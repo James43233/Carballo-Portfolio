@@ -8,7 +8,7 @@ export default function Projects() {
       description:
         "Full-stack e-commerce solution with React, Django, and PostgreSQL.",
       technologies: ["React", "Django", "PostgreSQL"],
-      image: "/ApplicationProof/ToyozuE-Commerce.png",
+      image: "/ApplicationProof/ToyozuE-Commerce.webp",
       link: "https://github.com/James43233/ToyozuWebApplication",
     },
     {
@@ -17,7 +17,7 @@ export default function Projects() {
       description:
         "Cross-platform violation tracking and payment app built with React Native.",
       technologies: ["React Native", "Django", "PostgreSQL"],
-      image: "/ApplicationProof/LTOApp.png",
+      image: "/ApplicationProof/LTOApp.webp",
       link: "https://github.com/James43233/LTO-Application-Violation-Monitoring-System.git",
     },
     {
@@ -26,7 +26,7 @@ export default function Projects() {
       description:
         "POS and inventory management system for small clothing businesses.",
       technologies: ["HTML / CSS", "PHP", "MySQL"],
-      image: "/ApplicationProof/MisFitsPOS.png",
+      image: "/ApplicationProof/MisFitsPOS.webp",
       link: "https://github.com/James43233/POS-Inventory-System",
     },
     {
@@ -35,7 +35,7 @@ export default function Projects() {
       description:
         "Object detection using deep learning to identify pests in greenhouse environments.",
       technologies: ["Python", "Roboflow", "Google Colab"],
-      image: "/ApplicationProof/PestDetection.png",
+      image: "/ApplicationProof/PestDetection.webp",
       link: "https://universe.roboflow.com/pestdetectionmodel-oqwk6/pest-dataset-923-jzzq0",
     },
     {
@@ -44,7 +44,7 @@ export default function Projects() {
       description:
         "Chatbot-based expense tracker using Large Language Models for smart analysis.",
       technologies: ["React Native", "FastAPI", "SQLite"],
-      image: "/ApplicationProof/ExpensesTracker.png",
+      image: "/ApplicationProof/ExpensesTracker.webp",
       link: "https://github.com/James43233/ExpensesTrackerDesign",
     },
   ]
@@ -67,16 +67,16 @@ export default function Projects() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Image */}
-              <div className="h-56 overflow-hidden">
+              <div className=" w-full h-[200px] overflow-hidden ">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Content */}
-              <div className="flex flex-col justify-between flex-grow p-6">
+              <div className="flex flex-col justify-between flex-grow p-6 ">
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
                     {project.title}

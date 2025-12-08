@@ -9,7 +9,7 @@ export default function Certificates() {
       title: "Beginning Custom Projects with Raspberry Pi", 
       issuer: "Coursera", 
       date: "2024", 
-      image: "/CourseraCertificate/C1.jpg",
+      image: "/CourseraCertificate/C1.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/ERTiUGDihz5BrIWMDG3MjgABA06OvXLhW7vScUMT_wSgRg?e=RQh5qj" // 🟢 Replace with real OneDrive link
     },
     { 
@@ -17,7 +17,7 @@ export default function Certificates() {
       title: "Programming for Everybody (Getting Started with Python)", 
       issuer: "Coursera", 
       date: "2023", 
-      image: "/CourseraCertificate/C2.jpg",
+      image: "/CourseraCertificate/C2.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/EVBj4lNCqnVKrnCR3eqV-mQBqKEpjPhj87ip4mSEDw6w_A?e=LPog11"
     },
     { 
@@ -25,7 +25,7 @@ export default function Certificates() {
       title: "LLM Fine-Tuning and Customization Training", 
       issuer: "Coursera", 
       date: "2025", 
-      image: "/CourseraCertificate/C3.jpg",
+      image: "/CourseraCertificate/C3.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/EekbQEkopXNHqbsrub6HAkABula-u5VwtdsX7NGSVRFaqw?e=YD6Aie"
     },
     { 
@@ -33,7 +33,7 @@ export default function Certificates() {
       title: "Start the UX Design Process: Empathize, Define, and Ideate", 
       issuer: "Coursera", 
       date: "2024", 
-      image: "/CourseraCertificate/C4.jpg",
+      image: "/CourseraCertificate/C4.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/ERXqb3SDA-BKkbdMVcGTM4kBGJd25hr7E8f9KaTXQp7ILg?e=yXB4XB"
     },
     { 
@@ -41,7 +41,7 @@ export default function Certificates() {
       title: "What is Data Science?", 
       issuer: "Coursera", 
       date: "2024", 
-      image: "/CourseraCertificate/C5.jpg",
+      image: "/CourseraCertificate/C5.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/EflOamh-IIZAqFQX2YbtfUYB_h2gcnsd2Bk2X6OMFjZy_w?e=N1Wo92"
     },
     { 
@@ -49,7 +49,7 @@ export default function Certificates() {
       title: "Generative AI Advanced Fine-Tuning for LLMs", 
       issuer: "Coursera", 
       date: "2025", 
-      image: "/CourseraCertificate/C6.jpg",
+      image: "/CourseraCertificate/C6.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/Ef6NSnEwxSRJiHKBuWEsU9YB4Hl0Fhmt-zixBTlKNA_VfA?e=WVrWYq"
     },
     { 
@@ -57,7 +57,7 @@ export default function Certificates() {
       title: "Introduction to Hardware and Operating Systems", 
       issuer: "Coursera", 
       date: "2025", 
-      image: "/CourseraCertificate/C7.jpg",
+      image: "/CourseraCertificate/C7.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/EQIoKSsTxTpIpu2J2XMmadcBl5OxnjEpc-OfTU46HCFIIA?e=KQ6fqw"
     },
     { 
@@ -65,7 +65,7 @@ export default function Certificates() {
       title: "Introduction to Software Engineering", 
       issuer: "Coursera", 
       date: "2025", 
-      image: "/CourseraCertificate/C8.jpg",
+      image: "/CourseraCertificate/C8.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/ETf71CTTvHtPjFoPHTW9yQMBtAP17T7Wgd2KPfyGnf9o3g?e=ZNBHiS"
     },
     { 
@@ -73,7 +73,7 @@ export default function Certificates() {
       title: "Fundamentals of AI Agents Using RAG and LangChain", 
       issuer: "Coursera", 
       date: "2025", 
-      image: "/CourseraCertificate/C9.jpg",
+      image: "/CourseraCertificate/C9.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/Eawc5_7PTjdNqy0IejC2YjMBvYaCO3Th9CfKYp8ZZA_goQ?e=ZaNnlq"
     },
     { 
@@ -81,7 +81,7 @@ export default function Certificates() {
       title: "Advanced Algorithms and Complexity", 
       issuer: "Coursera", 
       date: "2024", 
-      image: "/CourseraCertificate/C10.jpg",
+      image: "/CourseraCertificate/C10.webp",
       link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/EUArk4s-521LnochnBIdtiEBQzxt3zL9eC4RhvEi2me_qw?e=LA9ToV"
     },
   ]
@@ -101,7 +101,7 @@ export default function Certificates() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div
-          className={`flex gap-6 animate-scroll hover:pause whitespace-nowrap ${
+          className={`flex gap-6 animate-scroll hover:pause whitespace-nowrap  ${
             isHovered ? "paused" : ""
           }`}
         >
@@ -114,7 +114,7 @@ export default function Certificates() {
               <img
                 src={cert.image}
                 alt={cert.title}
-                className="w-full h-44 object-cover"
+                className="w-full object-cover"
               />
 
               {/* Content */}

@@ -1,6 +1,6 @@
 "use client"
 
-import Avatar from "../assets/MeinPng.png"
+import Avatar from "../assets/MeinPng.webp"
 
 const techStack = [
   { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -29,9 +29,9 @@ export default function Hero() {
         {/* Left Text Section */}
         <div className="flex flex-col items-center text-center md:items-start md:text-left space-y-6">
           <div className="w-full text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight flex flex-wrap justify-center md:justify-start gap-2">
+            <h1 className="text-xl sm:text-2xl md:text-2xl font-bold leading-tight flex flex-wrap justify-center md:justify-start gap-2">
               <span>Hi! I'm</span>
-              <span className="text-primary whitespace-nowrap">James Paul Carballo</span>
+              <span className="text-primary">James Paul Carballo</span>
             </h1>
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mt-3 text-muted-foreground">
               Full Stack Developer

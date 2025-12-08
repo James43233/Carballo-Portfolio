@@ -1,4 +1,3 @@
-"use client"
 
 import { useEffect, useState } from "react"
 import Header from "./components/header"
@@ -7,7 +6,7 @@ import Skills from "./components/skills"
 import Projects from "./components/projects"
 import Certificates from "./components/Certificates"
 import Footer from "./components/footer"
-import "./global.css"
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("about")
