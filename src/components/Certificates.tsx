@@ -1,6 +1,17 @@
 "use client"
 
-import { useState } from "react"
+
+import { useRef, useState } from "react"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 
 export default function Certificates() {
   const certificates = [
@@ -26,7 +37,7 @@ export default function Certificates() {
       issuer: "Coursera", 
       date: "2025", 
       image: "/CourseraCertificate/C3.webp",
-      link: "https://malayancollegesmindanaoo365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/EekbQEkopXNHqbsrub6HAkABula-u5VwtdsX7NGSVRFaqw?e=YD6Aie"
+      link: "https://malayancollegesmindanaooW365-my.sharepoint.com/:b:/g/personal/jpcarballo_mcm_edu_ph/EekbQEkopXNHqbsrub6HAkABula-u5VwtdsX7NGSVRFaqw?e=YD6Aie"
     },
     { 
       id: 4, 
@@ -86,60 +97,111 @@ export default function Certificates() {
     },
   ]
 
-  const [isHovered, setIsHovered] = useState(false)
+
+  const [current, setCurrent] = useState(0)
+  const emblaApiRef = useRef<CarouselApi | null>(null)
+
+  const handleSetApi = (api: CarouselApi | undefined) => {
+    if (!api) return
+    emblaApiRef.current = api
+    try {
+      setCurrent(api.selectedScrollSnap())
+    } catch {
+      // ignore
+    }
+    api.on("select", () => setCurrent(api.selectedScrollSnap()))
+    api.on("reInit", () => setCurrent(api.selectedScrollSnap()))
+  }
 
   return (
-    <section id="certificates" className="py-20 bg-muted/30 overflow-hidden">
-      <h2 className="text-4xl font-bold mb-16 text-center animate-fade-in">
+    <section id="certificates" className="relative py-14 sm:py-16 md:py-20 bg-background overflow-hidden">
+      {/* Full-width blurred backdrop from active slide */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-center bg-cover blur-3xl opacity-30 scale-110"
+        style={{ backgroundImage: `url(${certificates[current]?.image ?? ""})` }}
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-background/80" />
+
+      <h2 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 md:mb-16 text-center animate-fade-in">
         Certifications
       </h2>
 
-      {/* Responsive Marquee Style Container */}
-      <div
-        className="relative w-full overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div
-          className={`flex gap-6 animate-scroll hover:pause whitespace-nowrap  ${
-            isHovered ? "paused" : ""
-          }`}
+      <div className="flex justify-center px-4 sm:px-6 ">
+        <Carousel
+          className="w-full max-w-5xl"
+          opts={{ align: "center", loop: true }}
+          setApi={handleSetApi}
         >
-          {[...certificates, ...certificates].map((cert, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 bg-background rounded-xl border border-border overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-[280px] sm:w-[320px] md:w-[350px]"
-            >
-              {/* Image */}
-              <img
-                src={cert.image}
-                alt={cert.title}
-                className="w-full object-cover"
-              />
+          <CarouselContent className="h-[360px] sm:h-[200px] md:h-[420px] items-center">
+            {certificates.map((cert, idx) => {
+              const isCenter = idx === current
+              const isSide =
+                Math.abs(idx - current) === 1 ||
+                (current === 0 && idx === certificates.length - 1) ||
+                (current === certificates.length - 1 && idx === 0)
 
-              {/* Content */}
-              <div className="flex flex-col justify-between p-4 h-[240px]">
-                <div>
-                  <h3 className="text-md font-semibold mb-2 line-clamp-2">{cert.title}</h3>
-                  <p className="text-muted-foreground text-sm">{cert.issuer}</p>
-                  <p className="text-xs text-muted-foreground mt-1">Completed {cert.date}</p>
-                </div>
-
-                {/* View Credential Button */}
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center mt-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:opacity-90 transition"
+              return (
+                <CarouselItem
+                  key={cert.id}
+                  className="basis-auto w-full sm:w-[320px] sm:max-w-none md:w-[360px] xs:w-[280px] "
                 >
-                  View Credential
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+                  <div
+                    className={cn(
+                      "transition-all duration-300 rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden",
+                      isCenter ? "z-10 scale-[1.03] shadow-lg" : "scale-95",
+                      isSide ? "blur-sm opacity-60" : !isCenter ? "blur-md opacity-40" : ""
+                    )}
+                    style={{ pointerEvents: isCenter ? "auto" : "none" }}
+                  >
+                    <div className="relative">
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-40 sm:h-48 w-full object-cover"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent" />
+                    </div>
 
+                    <div className="flex h-44 sm:h-52 md:h-56 flex-col justify-between p-3 sm:p-4">
+                      <div className="space-y-1">
+                        <h3 className="text-base font-semibold leading-snug line-clamp-2">{cert.title}</h3>
+                        <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                        <p className="text-xs text-muted-foreground">Completed {cert.date}</p>
+                      </div>
+
+                      <Button asChild className="w-full">
+                        <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                          View Credential
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CarouselItem>
+              )
+            })}
+          </CarouselContent>
+
+          <CarouselPrevious className="left-2 sm:-left-12 md:-left-4" />
+          <CarouselNext className="right-2 sm:-right-12 md:-right-4" />
+
+          <div className="flex justify-center gap-2 mt-6">
+            {certificates.map((_, idx) => (
+              <button
+                key={idx}
+                className={cn(
+                  "h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full transition-colors",
+                  current === idx ? "bg-foreground" : "bg-muted-foreground/40"
+                )}
+                onClick={() => emblaApiRef.current?.scrollTo(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </Carousel>
+      </div>
     </section>
   )
 }
